@@ -1,0 +1,64 @@
+//- index.pug
+//- pug -w ./ -o ./
+// Quadratic Formula Calculator using Python
+// ax^2 + bx + c = 0
+// quadratic formula for finding x: (-b +- sqrt(b^2 - 4ac) / 2a)
+
+doctype html
+
+html
+  head
+    style
+      include ./style.css
+    script
+      include ./script.js
+
+  body
+    .factor
+      h1 Factor and find X
+      label.inputtext ax^2 + bx + c = 0
+      br
+      br
+      form
+        input(type="number").input#fa
+        label.inputtext x^2 + 
+
+        input(type="number").input#fb
+        label.inputtext x + 
+
+        input(type="number").input#fc
+        label.inputtext  = 0
+
+        br
+        br
+
+      button(onclick="factor()").input.inputtext Submit
+
+      .answers
+        h2#fanswer1 First X value
+        h2#fanswer2 Second X value
+
+        h2#fanswer3 Factored Expression
+
+    .expand
+      h1 Expand
+      label.inputtext a(x + b)(x + c) a and b can be negative numbers.
+      br
+      br
+      form
+        input(type="number").input#ea
+
+        label.inputtext (x + 
+        input(type="number").input#eb
+
+        label.inputtext ) (x + 
+        input(type="number").input#ec
+        label.inputtext )
+
+        br
+        br
+
+      button(onclick="expand()").input.inputtext Submit
+
+      .answers
+        h2#eanswer1 Expanded Expression
