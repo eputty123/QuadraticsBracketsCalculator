@@ -27,7 +27,11 @@ function factor() {
   console.log(quadpos);
   console.log(quadneg);
 
-  var factored = "Factored: (x + " + -quadpos + ")(y + " + -quadneg + ")";
+  if (a === 1) {
+    var factored = "Factored: (x + " + -quadpos + ")(y + " + -quadneg + ")";
+  } else {
+    var factored = "Factored: " + a + "(x + " + -quadpos + ")(y + " + -quadneg + ")";
+  }
 
   var answer1 = document.getElementById("fanswer1").innerHTML = ("X = " + quadpos);
   var answer2 = document.getElementById("fanswer2").innerHTML = ("X = " + quadneg);
