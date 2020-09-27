@@ -30,7 +30,7 @@ function factor() {
   if (a === 1) {
     var factored = "Factored: (x + " + -quadpos + ")(y + " + -quadneg + ")";
   } else {
-    var factored = "Factored: " + a + "(x + " + -quadpos + ")(y + " + -quadneg + ")";
+    var factored = "Factored: " + a + "(x + " + -quadpos + ")(x + " + -quadneg + ")";
   }
 
   var answer1 = document.getElementById("fanswer1").innerHTML = ("X = " + quadpos);
