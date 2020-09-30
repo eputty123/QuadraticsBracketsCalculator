@@ -1,86 +1,126 @@
-<!-- Quadratic Formula Calculator using Python--><!-- ax^2 + bx + c = 0--><!-- quadratic formula for finding x: (-b +- sqrt(b^2 - 4ac) / 2a)--><!DOCTYPE html><html><head><style>html {
-  width: 100%;
-}
+<!-- Quadratic Formula Calculator using Python-->
+<!-- ax^2 + bx + c = 0-->
+<!-- quadratic formula for finding x: (-b +- sqrt(b^2 - 4ac) / 2a)-->
+<!DOCTYPE html>
+<html>
 
-body {
-  background-color: #5a5dff;
-  text-align: center;
-  font-family: 'Roboto';
-  font-weight: light;
-}
+<head>
+  <style>
+    html {
+      width: 100%;
+    }
 
-.input {
-  color: white;
-  background-color: rgb(0, 2, 141);
-  width: 200px;
-  height: 50px;
-}
+    body {
+      background-color: #5a5dff;
+      text-align: center;
+      font-family: 'Roboto';
+      font-weight: light;
+    }
 
-.inputtext {
-  font-size: 20px;
-}
+    .input {
+      color: white;
+      background-color: rgb(0, 2, 141);
+      width: 200px;
+      height: 50px;
+    }
 
-.submit {
-  color: white;
-  background-color: rgb(0, 2, 141);
-  width: 200px;
-  height: 50px;
-}
+    .inputtext {
+      font-size: 20px;
+    }
 
-.factor {
-  padding: 40px;
-  border: 1px solid #ffffff;
-}
+    .submit {
+      color: white;
+      background-color: rgb(0, 2, 141);
+      width: 200px;
+      height: 50px;
+    }
 
-.expand {
-  padding: 40px;
-  border: 1px solid #ffffff;
-  margin-top: 30px;
-}</style><script>function factor() {
-  var a = parseInt(document.getElementById("fa").value);
-  var b = parseInt(document.getElementById("fb").value);
-  var c = parseInt(document.getElementById("fc").value);
+    .factor {
+      padding: 40px;
+      border: 1px solid #ffffff;
+    }
 
-  console.log(a);
-  console.log(b);
-  console.log(c);
+    .expand {
+      padding: 40px;
+      border: 1px solid #ffffff;
+      margin-top: 30px;
+    }
+  </style>
+  <script>
+    function factor() {
+      var a = parseInt(document.getElementById("fa").value);
+      var b = parseInt(document.getElementById("fb").value);
+      var c = parseInt(document.getElementById("fc").value);
 
-  if (a === 1) {} else {
-    // Dividing values of b and c by a to exclude the (for example) 2 in 2x^2
-    a = a;
-    b = (b / a);
-    c = (c / a);
-  }
+      console.log(a);
+      console.log(b);
+      console.log(c);
 
-  console.log(a);
-  console.log(b);
-  console.log(c);
+      if (a === 1) {} else {
+        // Dividing values of b and c by a to exclude the (for example) 2 in 2x^2
+        a = a;
+        b = (b / a);
+        c = (c / a);
+      }
 
-  // Adding method of Quadratic Formula
-  var quadpos = (-b + Math.sqrt(b * b - 4 * c)) / 2;
+      console.log(a);
+      console.log(b);
+      console.log(c);
 
-  // Subtracting method of Quadratic Formula
-  var quadneg = (-b - Math.sqrt(b * b - 4 * c)) / 2;
+      // Adding method of Quadratic Formula
+      var quadpos = (-b + Math.sqrt(b * b - 4 * c)) / 2;
 
-  console.log(quadpos);
-  console.log(quadneg);
+      // Subtracting method of Quadratic Formula
+      var quadneg = (-b - Math.sqrt(b * b - 4 * c)) / 2;
 
-  if (a === 1) {
-    var factored = "Factored: (x + " + -quadpos + ")(y + " + -quadneg + ")";
-  } else {
-    var factored = "Factored: " + a + "(x + " + -quadpos + ")(x + " + -quadneg + ")";
-  }
+      console.log(quadpos);
+      console.log(quadneg);
 
-  var answer1 = document.getElementById("fanswer1").innerHTML = ("X = " + quadpos);
-  var answer2 = document.getElementById("fanswer2").innerHTML = ("X = " + quadneg);
-  var answer3 = document.getElementById("fanswer3").innerHTML = (factored);
-}
+      if (a === 1) {
+        var factored = "Factored: (x + " + -quadpos + ")(y + " + -quadneg + ")";
+      } else {
+        var factored = "Factored: " + a + "(x + " + -quadpos + ")(x + " + -quadneg + ")";
+      }
 
-function expand() {
-  var a = parseInt(document.getElementById("ea").value);
-  var b = parseInt(document.getElementById("eb").value);
-  var c = parseInt(document.getElementById("ec").value);
+      var answer1 = document.getElementById("fanswer1").innerHTML = ("X = " + quadpos);
+      var answer2 = document.getElementById("fanswer2").innerHTML = ("X = " + quadneg);
+      var answer3 = document.getElementById("fanswer3").innerHTML = (factored);
+    }
 
-  var expanded = "Expanded: " + a + "x^2 + " + (b + c) * a + "x + " + (b * c) * a;
-  var answer1 = document.getElementById("eanswer1").innerHTML = (expanded);
-}</script></head><body><div class="factor"><h1>Factor and find X</h1><label class="inputtext">ax^2 + bx + c = 0</label><br><br><form><input class="input" type="number" id="fa"><label class="inputtext">x^2 + </label><input class="input" type="number" id="fb"><label class="inputtext">x + </label><input class="input" type="number" id="fc"><label class="inputtext"> = 0</label><br><br></form><button class="input inputtext" onclick="factor()">Submit</button><div class="answers"><h2 id="fanswer1">First X value</h2><h2 id="fanswer2">Second X value</h2><h2 id="fanswer3">Factored Expression</h2></div></div><div class="expand"><h1>Expand</h1><label class="inputtext">a(x + b)(x + c) a and b can be negative numbers.</label><br><br><form><input class="input" type="number" id="ea"><label class="inputtext">(x + </label><input class="input" type="number" id="eb"><label class="inputtext">) (x + </label><input class="input" type="number" id="ec"><label class="inputtext">)</label><br><br></form><button class="input inputtext" onclick="expand()">Submit</button><div class="answers"><h2 id="eanswer1">Expanded Expression</h2></div></div></body></html>
+    function expand() {
+      var a = parseInt(document.getElementById("ea").value);
+      var b = parseInt(document.getElementById("eb").value);
+      var c = parseInt(document.getElementById("ec").value);
+
+      var expanded = "Expanded: " + a + "x^2 + " + (b + c) * a + "x + " + (b * c) * a;
+      var answer1 = document.getElementById("eanswer1").innerHTML = (expanded);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="factor">
+    <h1>Factor and find X</h1><label class="inputtext">ax^2 + bx + c = 0</label><br><br>
+    <form><input class="input" type="number" step=any id="fa"><label class="inputtext">x^2 + </label><input
+        class="input" type="number" step=any id="fb"><label class="inputtext">x + </label><input class="input"
+        type="number" step=any id="fc"><label class="inputtext"> = 0</label><br><br></form><button
+      class="input inputtext" onclick="factor()">Submit</button>
+    <div class="answers">
+      <h2 id="fanswer1">First X value</h2>
+      <h2 id="fanswer2">Second X value</h2>
+      <h2 id="fanswer3">Factored Expression</h2>
+    </div>
+  </div>
+  <div class="expand">
+    <h1>Expand</h1><label class="inputtext">a(x + b)(x + c) a and b can be negative numbers.</label><br><br>
+    <form><input class="input" type="number" step=any id="ea"><label class="inputtext">(x + </label><input class="input"
+        type="number" step=any id="eb"><label class="inputtext">) (x + </label><input class="input" type="number"
+        step=any id="ec"><label class="inputtext">)</label><br><br></form><button class="input inputtext"
+      onclick="expand()">Submit</button>
+    <div class="answers">
+      <h2 id="eanswer1">Expanded Expression</h2>
+    </div>
+  </div>
+</body>
+
+</html>
