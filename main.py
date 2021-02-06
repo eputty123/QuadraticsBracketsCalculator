@@ -1,3 +1,5 @@
+import math as Math
+
 def choose():
   print('\n1: Quit')
   print('2: Find values of x / factor expanded brackets.')
@@ -17,9 +19,7 @@ def choose():
 def quadform_calc():
   # Quadratic Formula Calculator using Python
   # ax^2 + bx + c = 0
-  # quadratic formula for finding x: (-b +- sqrt(b^2 - 4ac) / 2a)
-
-  import math as Math
+  # quadratic formula for finding x: (-b +- sqrt(b^2 - 4ac) / 2a
 
   print('\nax^2 + bx + c = 0\n')
 
