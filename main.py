@@ -14,8 +14,6 @@ def choose():
     expand()
   else: print('Unknown choice')
 
-
-
 def quadform_calc():
   # Quadratic Formula Calculator using Python
   # ax^2 + bx + c = 0
@@ -71,8 +69,6 @@ def quadform_calc():
     # Printing values of x
     print(f'\nX = {quadpos}')
     print(f'X = {quadneg}\n')
-
-
 
 def expand():
   
